@@ -1,5 +1,8 @@
-const fs = require("fs");
+// Each file within a NODE application have their own scope, you cannot access a variable that is written within another file unless you explicitly export it from it's own file and require it where you want to use it.
 
-fs.writeFileSync("notes.txt", "This file was written by NodeJS");
+const add = require("./utils.js");
+const getNotes = require("./notes.js");
 
-fs.appendFileSync("notes.txt", ", Some extra data has been written by NodeJS.");
+const sum = add(1, 2);
+
+console.log(getNotes());
