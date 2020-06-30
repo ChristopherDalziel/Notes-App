@@ -12,3 +12,5 @@ console.log(getNotes());
 console.log(validator.isEmail("Christopher_Dalziel@hotmail.com"));
 
 console.log(chalk.green.bold.inverse("Success!"));
+
+console.log("nodemon test");
