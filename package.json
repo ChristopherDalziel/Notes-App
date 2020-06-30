@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ChristopherDalziel/Notes-App/issues"
   },
-  "homepage": "https://github.com/ChristopherDalziel/Notes-App#readme"
+  "homepage": "https://github.com/ChristopherDalziel/Notes-App#readme",
+  "dependencies": {
+    "validator": "^13.1.1"
+  }
 }
