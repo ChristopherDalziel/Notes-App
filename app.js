@@ -2,15 +2,29 @@
 
 const chalk = require("chalk");
 const validator = require("validator");
-const add = require("./utils.js");
-const getNotes = require("./notes.js");
+// const add = require("./utils.js");
+// const getNotes = require("./notes.js");
 
-const sum = add(1, 2);
+// const sum = add(1, 2);
 
-console.log(getNotes());
+// console.log(getNotes());
 
-console.log(validator.isEmail("Christopher_Dalziel@hotmail.com"));
+// console.log(validator.isEmail("Christopher_Dalziel@hotmail.com"));
 
-console.log(chalk.green.bold.inverse("Success!"));
+// console.log(chalk.green.bold.inverse("Success!"));
 
-console.log("nodemon test");
+// console.log(process.argv[2]);
+// argsv prints to the console
+// 1. Path to nodejs executable
+// 2. path to app.js file
+// 3. Passed in value
+
+const command = process.argv[2];
+
+console.log(process.argv);
+
+if (command === "add") {
+  console.log("Adding note");
+} else if (command === "remove") {
+  console.log("Removing note");
+}
