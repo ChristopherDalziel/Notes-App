@@ -3,14 +3,28 @@
 const chalk = require("chalk");
 const yargs = require("yargs");
 const getNotes = require("./notes.js");
-const { describe } = require("yargs");
 
 // Create
 yargs.command({
   command: "add",
   describe: "Add a new note",
-  handler: function () {
-    console.log("Adding a new note");
+  builder: {
+    title: {
+      describe: "Note title",
+      // True means you have to provide this information in order for the command to work
+      demandOption: true,
+      // The required title must be a string
+      type: "string",
+    },
+    body: {
+      description: "Note description",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: (argv) => {
+    console.log("Title: " + argv.title);
+    console.log("Body: " + argv.body);
   },
 });
 
