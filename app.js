@@ -26,9 +26,9 @@ yargs.command({
 // Read
 yargs.command({
   command: "read",
-  describe: "Read note",
+  describe: "Read a note",
   handler: function () {
-    console.log("This is a note");
+    console.log("Reading a note");
   },
 });
 
