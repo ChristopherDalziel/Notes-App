@@ -1,30 +1,46 @@
 // Each file within a NODE application have their own scope, you cannot access a variable that is written within another file unless you explicitly export it from it's own file and require it where you want to use it.
 
 const chalk = require("chalk");
-const validator = require("validator");
-// const add = require("./utils.js");
-// const getNotes = require("./notes.js");
+const yargs = require("yargs");
+const getNotes = require("./notes.js");
+const { describe } = require("yargs");
 
-// const sum = add(1, 2);
+// Create
+yargs.command({
+  command: "add",
+  describe: "Add a new note",
+  handler: function () {
+    console.log("Adding a new note");
+  },
+});
 
-// console.log(getNotes());
+// Remove
+yargs.command({
+  command: "remove",
+  describe: "Remove existing note",
+  handler: function () {
+    console.log("Removing existing note");
+  },
+});
 
-// console.log(validator.isEmail("Christopher_Dalziel@hotmail.com"));
+// Read
+yargs.command({
+  command: "read",
+  describe: "Read note",
+  handler: function () {
+    console.log("This is a note");
+  },
+});
 
-// console.log(chalk.green.bold.inverse("Success!"));
+// List
+yargs.command({
+  command: "list",
+  describe: "Lists all notes",
+  handler: function () {
+    console.log("A list of all notes");
+  },
+});
 
-// console.log(process.argv[2]);
-// argsv prints to the console
-// 1. Path to nodejs executable
-// 2. path to app.js file
-// 3. Passed in value
+// add, remove, read, list
 
-const command = process.argv[2];
-
-console.log(process.argv);
-
-if (command === "add") {
-  console.log("Adding note");
-} else if (command === "remove") {
-  console.log("Removing note");
-}
+console.log(yargs.argv);
