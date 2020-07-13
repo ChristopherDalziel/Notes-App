@@ -23,8 +23,28 @@ const book = {
 // Reading json file
 
 // What comes back is a buffer not a string, this is why we're calling it a "buffer"
+// const dataBuffer = fs.readFileSync("1-json.json");
+// const dataJSON = dataBuffer.toString();
+// const data = JSON.parse(dataJSON);
+
+// console.log(data.title);
+
+// Challenge code, updated 1-json.json file
+
+// const newData = { name: "Chris", age: 26 };
+
+const newData = {
+  name: "Chris",
+  age: "26",
+};
+
 const dataBuffer = fs.readFileSync("1-json.json");
 const dataJSON = dataBuffer.toString();
-const data = JSON.parse(dataJSON);
+const user = JSON.parse(dataJSON);
 
-console.log(data.title);
+user.name = "Chris";
+user.age = "26";
+
+const userJSON = JSON.stringify(user);
+
+fs.writeFileSync("1-json.json", userJSON);
